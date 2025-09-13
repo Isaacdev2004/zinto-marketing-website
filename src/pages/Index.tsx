@@ -102,11 +102,90 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* How It Works Section */}
+      <section className="py-20 px-4">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              How Zinto Works
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get started in three simple steps and transform your real estate business
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-primary">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Import Your Leads</h3>
+              <p className="text-muted-foreground">
+                Easily import existing contacts or start capturing new leads with our powerful forms and integrations.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-secondary">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Automate Follow-ups</h3>
+              <p className="text-muted-foreground">
+                Set up intelligent workflows that nurture leads automatically while you focus on high-value activities.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-accent">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Close More Deals</h3>
+              <p className="text-muted-foreground">
+                Track progress with detailed analytics and close more deals with better-organized prospect management.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
       <section className="py-20 px-4 bg-muted/30">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Trusted by Thousands
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Join the growing community of successful real estate professionals
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">5,000+</div>
+              <div className="text-muted-foreground">Active Users</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-secondary mb-2">$2.5M+</div>
+              <div className="text-muted-foreground">Deals Closed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-accent mb-2">98%</div>
+              <div className="text-muted-foreground">Customer Satisfaction</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">24/7</div>
+              <div className="text-muted-foreground">Support Available</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4">
         <div className="container max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-16">
-            Trusted by Real Estate Professionals
+            What Our Users Say
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
