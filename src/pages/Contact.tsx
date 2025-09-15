@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, MessageSquare, MessageCircle, Clock, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import zintoLogo from "@/assets/zinto-logo.png";
 
@@ -18,81 +19,138 @@ const Contact = () => {
             <span className="text-xl font-bold">Zinto</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
-            <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Pricing</Link>
-            <Link to="/contact" className="text-sm font-medium text-primary">Contact</Link>
-            <Link to="/login" className="text-sm font-medium hover:text-primary transition-colors">Login</Link>
+            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
+            <Link to="/casos-uso" className="text-sm font-medium hover:text-primary transition-colors">Casos de Uso</Link>
+            <Link to="/integraciones" className="text-sm font-medium hover:text-primary transition-colors">Integraciones</Link>
+            <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Precios</Link>
+            <Link to="/contact" className="text-sm font-medium text-primary">Contacto</Link>
+            <Link to="/login" className="text-sm font-medium hover:text-primary transition-colors">Iniciar sesión</Link>
+            <Button className="btn-gradient">
+              Prueba Gratis
+            </Button>
           </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="hero-gradient py-20 px-4">
-        <div className="container max-w-4xl mx-auto text-center">
+      <section className="py-16 px-4">
+        <div className="container max-w-6xl mx-auto text-center">
+          <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 px-3 py-1 mb-6">
+            ¿Tienes más preguntas? Estamos aquí para ayudarte
+          </Badge>
+          
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Get in Touch
+            Nuestro equipo está{" "}
+            <span className="text-primary">aquí para ayudarte</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+          
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+            Contáctanos por el canal que prefieras. Respondemos rápido y en español.
           </p>
+          
+          {/* Contact Methods */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <Button variant="outline" size="lg" className="p-6 h-auto justify-start" asChild>
+              <a href="mailto:hola@zinto.app" className="flex items-center gap-4">
+                <Mail className="h-6 w-6 text-primary" />
+                <div className="text-left">
+                  <div className="font-semibold">Email</div>
+                  <div className="text-sm text-muted-foreground">hola@zinto.app</div>
+                </div>
+              </a>
+            </Button>
+            
+            <Button variant="outline" size="lg" className="p-6 h-auto justify-start" asChild>
+              <a href="https://wa.me/1234567890" className="flex items-center gap-4">
+                <MessageCircle className="h-6 w-6 text-accent" />
+                <div className="text-left">
+                  <div className="font-semibold">WhatsApp</div>
+                  <div className="text-sm text-muted-foreground">Respuesta inmediata</div>
+                </div>
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4">
-        <div className="container max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="container max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <Card className="shadow-lg border-0">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5 text-primary" />
-                  Send us a Message
+            <Card className="shadow-xl border-0">
+              <CardHeader className="pb-8">
+                <CardTitle className="flex items-center gap-3 text-2xl">
+                  <MessageSquare className="h-6 w-6 text-primary" />
+                  Escríbenos un mensaje
                 </CardTitle>
+                <p className="text-muted-foreground">
+                  Cuéntanos sobre tu negocio inmobiliario y cómo podemos ayudarte.
+                </p>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="Your first name" />
+                    <Label htmlFor="nombre">Nombre *</Label>
+                    <Input id="nombre" placeholder="Tu nombre" required />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Your last name" />
+                    <Label htmlFor="apellido">Apellido *</Label>
+                    <Input id="apellido" placeholder="Tu apellido" required />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="your.email@example.com" />
+                  <Label htmlFor="email">Email *</Label>
+                  <Input id="email" type="email" placeholder="tu.email@ejemplo.com" required />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="company">Company</Label>
-                  <Input id="company" placeholder="Your company name (optional)" />
+                  <Label htmlFor="telefono">Teléfono</Label>
+                  <Input id="telefono" placeholder="+34 600 123 456" />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="empresa">Empresa / Inmobiliaria</Label>
+                  <Input id="empresa" placeholder="Nombre de tu empresa (opcional)" />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="equipo">Tamaño del equipo</Label>
+                  <select id="equipo" className="w-full px-3 py-2 border border-input bg-background rounded-md">
+                    <option>Solo yo</option>
+                    <option>2-5 agentes</option>
+                    <option>6-15 agentes</option>
+                    <option>16-50 agentes</option>
+                    <option>Más de 50 agentes</option>
+                  </select>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="consulta">¿En qué podemos ayudarte?</Label>
                   <Textarea 
-                    id="message" 
-                    placeholder="Tell us how we can help you..."
+                    id="consulta" 
+                    placeholder="Cuéntanos sobre tu negocio y qué buscas..."
                     className="min-h-[120px]"
                   />
                 </div>
                 
                 <Button className="btn-gradient w-full" size="lg">
-                  Send Message
+                  Enviar consulta
                 </Button>
+                
+                <p className="text-xs text-muted-foreground text-center">
+                  Responderemos en menos de 24 horas
+                </p>
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
+            {/* Contact Information & Support */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-                <p className="text-muted-foreground mb-8">
-                  We're here to help you grow your real estate business. Reach out to us through any of these channels.
+                <h2 className="text-3xl font-bold mb-6">Soporte especializado</h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Nuestro equipo entiende el sector inmobiliario y está listo para ayudarte a implementar Zinto en tu negocio.
                 </p>
               </div>
 
@@ -104,13 +162,40 @@ const Contact = () => {
                         <Mail className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1">Email Support</h3>
-                        <p className="text-muted-foreground text-sm mb-2">
-                          Get in touch via email for detailed inquiries
+                        <h3 className="font-semibold mb-2">Email directo</h3>
+                        <p className="text-muted-foreground text-sm mb-3">
+                          Para consultas detalladas e información técnica
                         </p>
-                        <a href="mailto:support@zinto.com" className="text-primary hover:underline">
-                          support@zinto.com
+                        <a href="mailto:hola@zinto.app" className="text-primary hover:underline font-medium">
+                          hola@zinto.app
                         </a>
+                        <div className="flex items-center gap-2 mt-2 text-xs text-muted-foreground">
+                          <Clock className="h-3 w-3" />
+                          <span>Respuesta en menos de 4 horas</span>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="card-hover border-0 shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <MessageCircle className="h-6 w-6 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-2">WhatsApp Business</h3>
+                        <p className="text-muted-foreground text-sm mb-3">
+                          Chat directo con nuestro equipo de soporte
+                        </p>
+                        <a href="https://wa.me/1234567890" className="text-primary hover:underline font-medium">
+                          +34 XXX XXX XXX
+                        </a>
+                        <div className="flex items-center gap-2 mt-2 text-xs text-muted-foreground">
+                          <Clock className="h-3 w-3" />
+                          <span>Lunes a Viernes 9:00 - 18:00</span>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
@@ -123,75 +208,100 @@ const Contact = () => {
                         <Phone className="h-6 w-6 text-secondary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1">Phone Support</h3>
-                        <p className="text-muted-foreground text-sm mb-2">
-                          Call us for immediate assistance
+                        <h3 className="font-semibold mb-2">Llamada programada</h3>
+                        <p className="text-muted-foreground text-sm mb-3">
+                          Agenda una llamada para resolver dudas específicas
                         </p>
-                        <a href="tel:+1-555-123-4567" className="text-primary hover:underline">
-                          +1 (555) 123-4567
-                        </a>
-                        <p className="text-xs text-muted-foreground mt-1">
-                          Mon-Fri 9AM-6PM EST
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="card-hover border-0 shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="h-6 w-6 text-accent" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">Office Location</h3>
-                        <p className="text-muted-foreground text-sm mb-2">
-                          Visit us at our headquarters
-                        </p>
-                        <address className="text-sm not-italic">
-                          123 Business Ave<br />
-                          Suite 100<br />
-                          New York, NY 10001
-                        </address>
+                        <Button variant="outline" size="sm">
+                          Programar llamada
+                        </Button>
+                        <div className="flex items-center gap-2 mt-2 text-xs text-muted-foreground">
+                          <Clock className="h-3 w-3" />
+                          <span>Disponible en horario comercial</span>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               </div>
+
+              {/* Support Promise */}
+              <Card className="bg-primary/5 border-primary/20">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-4 text-primary">Nuestra promesa de soporte</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Respuesta en menos de 24 horas",
+                      "Soporte en español por expertos",
+                      "Implementación guiada paso a paso",
+                      "Sin costos adicionales por soporte"
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-center gap-3">
+                        <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
+                        <span className="text-sm">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container max-w-4xl mx-auto">
+      <section className="py-20 px-4">
+        <div className="container max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Common Questions
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Preguntas{" "}
+              <span className="text-primary">frecuentes</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Quick answers to questions you might have
+            <p className="text-lg md:text-xl text-muted-foreground">
+              Resolvemos las dudas más comunes sobre Zinto y el sector inmobiliario.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="font-semibold mb-2">How quickly will you respond?</h3>
-              <p className="text-muted-foreground">We typically respond to all inquiries within 24 hours during business days.</p>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">¿Cuál es la diferencia entre los planes?</h3>
+                <p className="text-muted-foreground leading-relaxed">Los planes se diferencian principalmente por el número de agentes incluidos y las funciones avanzadas. Todos incluyen gestión de leads básica.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">¿Cómo funciona la prueba gratuita?</h3>
+                <p className="text-muted-foreground leading-relaxed">14 días completamente gratis con acceso a todas las funciones. No se requiere tarjeta de crédito y puedes cancelar en cualquier momento.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">¿Es seguro conectar mi CRM actual?</h3>
+                <p className="text-muted-foreground leading-relaxed">Sí, utilizamos conexiones encriptadas y cumplimos con GDPR. Tus datos permanecen siempre bajo tu control.</p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold mb-2">Do you offer phone support?</h3>
-              <p className="text-muted-foreground">Yes, we offer phone support for all paid plans during business hours.</p>
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">¿Necesito conocimientos técnicos?</h3>
+                <p className="text-muted-foreground leading-relaxed">No, Zinto está diseñado para ser intuitivo. Incluimos onboarding personalizado y soporte durante la implementación.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">¿Cómo migro mis leads existentes?</h3>
+                <p className="text-muted-foreground leading-relaxed">Te ayudamos a importar todos tus contactos desde Excel, Google Sheets o tu CRM actual. El proceso es automático y seguro.</p>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-3 text-lg">¿Qué tipo de soporte ofrecen?</h3>
+                <p className="text-muted-foreground leading-relaxed">Soporte en español por email, WhatsApp y llamadas programadas. Incluido en todos los planes sin costo adicional.</p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold mb-2">Can I schedule a demo?</h3>
-              <p className="text-muted-foreground">Absolutely! Contact us to schedule a personalized demo of Zinto's features.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-2">Do you offer training?</h3>
-              <p className="text-muted-foreground">Yes, we provide comprehensive training resources and personalized onboarding.</p>
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-6">¿No encuentras la respuesta que buscas?</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="outline" size="lg" asChild>
+                <a href="mailto:hola@zinto.app">Escribir a hola@zinto.app</a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a href="https://wa.me/1234567890">WhatsApp: +34 XXX XXX XXX</a>
+              </Button>
             </div>
           </div>
         </div>
@@ -211,29 +321,30 @@ const Contact = () => {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
+              <h4 className="font-semibold mb-4">Producto</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground">Pricing</Link></li>
-                <li><Link to="/features" className="text-muted-foreground hover:text-foreground">Features</Link></li>
+                <li><Link to="/casos-uso" className="text-muted-foreground hover:text-foreground">Casos de Uso</Link></li>
+                <li><Link to="/integraciones" className="text-muted-foreground hover:text-foreground">Integraciones</Link></li>
+                <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground">Precios</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4">Empresa</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-muted-foreground hover:text-foreground">About</Link></li>
-                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">Contact</Link></li>
+                <li><Link to="/about" className="text-muted-foreground hover:text-foreground">Nosotros</Link></li>
+                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">Contacto</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground">Privacidad</Link></li>
+                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground">Términos</Link></li>
               </ul>
             </div>
           </div>
           <div className="border-t pt-8 mt-8 text-center text-sm text-muted-foreground">
-            © 2024 Zinto. All rights reserved.
+            © 2024 Zinto. Todos los derechos reservados.
           </div>
         </div>
       </footer>
