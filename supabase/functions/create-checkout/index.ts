@@ -56,7 +56,6 @@ serve(async (req) => {
       cancel_url: `${req.headers.get("origin")}/pricing?canceled=true`,
       allow_promotion_codes: true,
       billing_address_collection: "required",
-      customer_creation: "always",
     });
 
     return new Response(
