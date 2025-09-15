@@ -4,10 +4,44 @@ import { Badge } from "@/components/ui/badge";
 import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import zintoLogo from "@/assets/zinto-logo.png";
 
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
+  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const { toast } = useToast();
+
+  const handleCheckout = async (planName: string) => {
+    setLoadingPlan(planName);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          plan: planName.toLowerCase(),
+          billing: isYearly ? 'yearly' : 'monthly'
+        }
+      });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        window.open(data.url, '_blank');
+      } else {
+        throw new Error('No checkout URL received');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      toast({
+        title: "Checkout Error",
+        description: "Failed to start checkout process. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoadingPlan(null);
+    }
+  };
 
   const plans = [
     {
@@ -152,8 +186,10 @@ const Pricing = () => {
                     className={`w-full ${plan.popular ? 'btn-gradient' : ''}`}
                     variant={plan.popular ? "default" : "outline"}
                     size="lg"
+                    onClick={() => handleCheckout(plan.name)}
+                    disabled={loadingPlan === plan.name}
                   >
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                    {loadingPlan === plan.name ? 'Loading...' : 'Get Started'} <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
               </Card>
