@@ -27,10 +27,10 @@ const Login = () => {
             <span className="text-xl font-bold">Zinto</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
-            <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Pricing</Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
-            <Link to="/login" className="text-sm font-medium text-primary">Login</Link>
+            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
+            <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Precios</Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contacto</Link>
+            <Link to="/login" className="text-sm font-medium text-primary">Iniciar sesión</Link>
           </nav>
         </div>
       </header>
@@ -42,29 +42,29 @@ const Login = () => {
             <div className="flex justify-center mb-4">
               <img src={zintoLogo} alt="Zinto" className="h-12 w-auto" />
             </div>
-            <CardTitle className="text-2xl mb-2">Welcome Back</CardTitle>
-            <p className="text-muted-foreground">Sign in to access your Zinto CRM</p>
+            <CardTitle className="text-2xl mb-2">Bienvenido de vuelta</CardTitle>
+            <p className="text-muted-foreground">Inicia sesión para acceder a tu CRM Zinto</p>
           </CardHeader>
           
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">Correo electrónico</Label>
                 <Input 
                   id="email" 
                   type="email" 
-                  placeholder="your.email@example.com"
+                  placeholder="tu.email@ejemplo.com"
                   required
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Contraseña</Label>
                 <div className="relative">
                   <Input 
                     id="password" 
                     type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
+                    placeholder="Ingresa tu contraseña"
                     required
                   />
                   <button
@@ -80,15 +80,15 @@ const Login = () => {
               <div className="flex items-center justify-between text-sm">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input type="checkbox" className="rounded" />
-                  <span className="text-muted-foreground">Remember me</span>
+                  <span className="text-muted-foreground">Recordarme</span>
                 </label>
                 <a href="#" className="text-primary hover:underline">
-                  Forgot password?
+                  ¿Olvidaste tu contraseña?
                 </a>
               </div>
               
               <Button type="submit" className="btn-gradient w-full" size="lg">
-                Sign In
+                Iniciar Sesión
               </Button>
             </form>
             
@@ -96,11 +96,11 @@ const Login = () => {
               <Separator className="my-4" />
               <div className="text-center">
                 <p className="text-sm text-muted-foreground mb-4">
-                  Don't have an account?
+                  ¿No tienes una cuenta?
                 </p>
                 <Link to="/pricing">
                   <Button variant="outline" className="w-full">
-                    Start Free Trial
+                    Comenzar Prueba Gratuita
                   </Button>
                 </Link>
               </div>
@@ -114,7 +114,7 @@ const Login = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl font-bold mb-4">
-              Why Real Estate Professionals Choose Zinto
+              Por qué los profesionales inmobiliarios eligen Zinto
             </h2>
           </div>
           
@@ -123,9 +123,9 @@ const Login = () => {
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚀</span>
               </div>
-              <h3 className="font-semibold mb-2">Easy Setup</h3>
+              <h3 className="font-semibold mb-2">Configuración Fácil</h3>
               <p className="text-sm text-muted-foreground">
-                Get started in minutes with our intuitive interface
+                Comienza en minutos con nuestra interfaz intuitiva
               </p>
             </div>
             
@@ -133,9 +133,9 @@ const Login = () => {
               <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📈</span>
               </div>
-              <h3 className="font-semibold mb-2">Increase Sales</h3>
+              <h3 className="font-semibold mb-2">Aumenta las Ventas</h3>
               <p className="text-sm text-muted-foreground">
-                Track and convert more leads with smart automation
+                Rastrea y convierte más leads con automatización inteligente
               </p>
             </div>
             
@@ -143,9 +143,9 @@ const Login = () => {
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🤝</span>
               </div>
-              <h3 className="font-semibold mb-2">Better Relationships</h3>
+              <h3 className="font-semibold mb-2">Mejores Relaciones</h3>
               <p className="text-sm text-muted-foreground">
-                Build stronger connections with clients and prospects
+                Construye conexiones más sólidas con clientes y prospectos
               </p>
             </div>
           </div>
@@ -162,28 +162,29 @@ const Login = () => {
                 <span className="font-bold">Zinto</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Empowering real estate professionals to grow together.
+                Empoderando a los profesionales inmobiliarios para crecer juntos.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
+              <h4 className="font-semibold mb-4">Producto</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground">Pricing</Link></li>
-                <li><Link to="/features" className="text-muted-foreground hover:text-foreground">Features</Link></li>
+                <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground">Precios</Link></li>
+                <li><Link to="/casos-uso" className="text-muted-foreground hover:text-foreground">Casos de Uso</Link></li>
+                <li><Link to="/integraciones" className="text-muted-foreground hover:text-foreground">Integraciones</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4">Empresa</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-muted-foreground hover:text-foreground">About</Link></li>
-                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">Contact</Link></li>
+                <li><Link to="/about" className="text-muted-foreground hover:text-foreground">Acerca de</Link></li>
+                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">Contacto</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground">Política de Privacidad</Link></li>
+                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground">Términos de Servicio</Link></li>
               </ul>
             </div>
           </div>
