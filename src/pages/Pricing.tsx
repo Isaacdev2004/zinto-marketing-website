@@ -102,10 +102,15 @@ const Pricing = () => {
             <span className="text-xl font-bold">Zinto</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
-            <Link to="/pricing" className="text-sm font-medium text-primary">Pricing</Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
-            <Link to="/login" className="text-sm font-medium hover:text-primary transition-colors">Login</Link>
+            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
+            <Link to="/casos-uso" className="text-sm font-medium hover:text-primary transition-colors">Casos de Uso</Link>
+            <Link to="/integraciones" className="text-sm font-medium hover:text-primary transition-colors">Integraciones</Link>
+            <Link to="/pricing" className="text-sm font-medium text-primary">Precios</Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contacto</Link>
+            <Link to="/login" className="text-sm font-medium hover:text-primary transition-colors">Iniciar sesión</Link>
+            <Button className="btn-gradient">
+              Prueba Gratis
+            </Button>
           </nav>
         </div>
       </header>
@@ -113,17 +118,21 @@ const Pricing = () => {
       {/* Hero Section */}
       <section className="hero-gradient py-20 px-4">
         <div className="container max-w-4xl mx-auto text-center">
+          <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 px-3 py-1 mb-6">
+            Precios transparentes sin sorpresas
+          </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Choose Your Plan
+            Planes que se adaptan a tu{" "}
+            <span className="text-primary">negocio inmobiliario</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
-            Start your free trial today. No credit card required.
+            Solo pagas por usuarios activos. Sin costos por lead ni comisiones ocultas.
           </p>
           
           {/* Billing Toggle */}
           <div className="flex items-center justify-center gap-4 mb-12">
             <span className={`text-sm ${!isYearly ? 'text-foreground font-medium' : 'text-muted-foreground'}`}>
-              Monthly
+              Mensual
             </span>
             <button
               onClick={() => setIsYearly(!isYearly)}
@@ -138,9 +147,21 @@ const Pricing = () => {
               />
             </button>
             <span className={`text-sm ${isYearly ? 'text-foreground font-medium' : 'text-muted-foreground'}`}>
-              Yearly
-              <Badge variant="secondary" className="ml-2">Save 20%</Badge>
+              Anual
+              <Badge variant="secondary" className="ml-2">Ahorra 20%</Badge>
             </span>
+          </div>
+          
+          {/* Trust Signals */}
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground mb-8">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-accent"></div>
+              <span>Sin costos por lead</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-accent"></div>
+              <span>Todos los precios en USD</span>
+            </div>
           </div>
         </div>
       </section>
@@ -242,29 +263,30 @@ const Pricing = () => {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
+              <h4 className="font-semibold mb-4">Producto</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground">Pricing</Link></li>
-                <li><Link to="/features" className="text-muted-foreground hover:text-foreground">Features</Link></li>
+                <li><Link to="/casos-uso" className="text-muted-foreground hover:text-foreground">Casos de Uso</Link></li>
+                <li><Link to="/integraciones" className="text-muted-foreground hover:text-foreground">Integraciones</Link></li>
+                <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground">Precios</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4">Empresa</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-muted-foreground hover:text-foreground">About</Link></li>
-                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">Contact</Link></li>
+                <li><Link to="/about" className="text-muted-foreground hover:text-foreground">Nosotros</Link></li>
+                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">Contacto</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground">Privacidad</Link></li>
+                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground">Términos</Link></li>
               </ul>
             </div>
           </div>
           <div className="border-t pt-8 mt-8 text-center text-sm text-muted-foreground">
-            © 2024 Zinto. All rights reserved.
+            © 2024 Zinto. Todos los derechos reservados.
           </div>
         </div>
       </footer>

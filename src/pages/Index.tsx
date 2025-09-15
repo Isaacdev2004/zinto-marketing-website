@@ -17,7 +17,8 @@ const Index = () => {
             <span className="text-xl font-bold">Zinto</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/features" className="text-sm font-medium hover:text-primary transition-colors">Funcionalidades</Link>
+            <Link to="/casos-uso" className="text-sm font-medium hover:text-primary transition-colors">Casos de Uso</Link>
+            <Link to="/integraciones" className="text-sm font-medium hover:text-primary transition-colors">Integraciones</Link>  
             <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Precios</Link>
             <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contacto</Link>
             <Link to="/login" className="text-sm font-medium hover:text-primary transition-colors">Iniciar sesión</Link>
@@ -359,29 +360,30 @@ const Index = () => {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
+              <h4 className="font-semibold mb-4">Producto</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground">Pricing</Link></li>
-                <li><Link to="/features" className="text-muted-foreground hover:text-foreground">Features</Link></li>
+                <li><Link to="/casos-uso" className="text-muted-foreground hover:text-foreground">Casos de Uso</Link></li>
+                <li><Link to="/integraciones" className="text-muted-foreground hover:text-foreground">Integraciones</Link></li>
+                <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground">Precios</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4">Empresa</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/about" className="text-muted-foreground hover:text-foreground">About</Link></li>
-                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">Contact</Link></li>
+                <li><Link to="/about" className="text-muted-foreground hover:text-foreground">Nosotros</Link></li>
+                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground">Contacto</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground">Privacidad</Link></li>
+                <li><Link to="/terms" className="text-muted-foreground hover:text-foreground">Términos</Link></li>
               </ul>
             </div>
           </div>
           <div className="border-t pt-8 mt-8 text-center text-sm text-muted-foreground">
-            © 2024 Zinto. All rights reserved.
+            © 2024 Zinto. Todos los derechos reservados.
           </div>
         </div>
       </footer>
