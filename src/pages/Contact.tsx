@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, MessageSquare, MessageCircle, Clock, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import zintoLogo from "@/assets/new-logo.jpeg";
+import zintoLogo from "@/assets/zinto-logo.png";
 
 const Contact = () => {
   return (

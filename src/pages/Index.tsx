@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Users, BarChart3, Shield, Zap, Play, CheckCircle, MessageSquare, Tag, Send, Bot, Clock, UserCheck, FileText, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import zintoLogo from "@/assets/new-logo.jpeg";
+import zintoLogo from "@/assets/zinto-logo.png";
 import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 
 const Index = () => {
