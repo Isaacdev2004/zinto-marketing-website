@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Users, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -45,48 +45,56 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: "Basic",
-      description: "Perfect for getting started",
-      monthlyPrice: 29,
+      name: "Zinto Básico",
+      description: "Perfecto para empezar",
+      monthlyPrice: 28,
       yearlyPrice: 290,
       features: [
-        "Up to 100 leads",
-        "Basic CRM features",
-        "Email support",
-        "Mobile app access",
-        "Lead capture forms"
+        "3 usuarios incluidos",
+        "1 número de WhatsApp (QR)",
+        "Chats ilimitados",
+        "Soporte por correo electrónico",
+        "Integraciones básicas",
+        "Panel de control estándar",
+        "Plantillas rápidas",
+        "Etiquetas básicas"
       ],
       popular: false
     },
     {
-      name: "Pro",
-      description: "Most popular for growing teams",
-      monthlyPrice: 79,
-      yearlyPrice: 790,
+      name: "Zinto Pro",
+      description: "Para equipos en crecimiento",
+      monthlyPrice: 45,
+      yearlyPrice: 450,
       features: [
-        "Unlimited leads",
-        "Advanced automation",
-        "Analytics & reporting",
-        "Priority support",
-        "Custom integrations",
-        "Team collaboration",
-        "Advanced lead scoring"
+        "4 usuarios incluidos",
+        "1 número de WhatsApp",
+        "Chats ilimitados", 
+        "Soporte prioritario",
+        "Panel de control avanzado",
+        "Asignación automática",
+        "Campañas masivas",
+        "Métricas básicas",
+        "Chat interno del equipo"
       ],
       popular: true
     },
     {
-      name: "Enterprise",
-      description: "For large organizations",
-      monthlyPrice: 199,
-      yearlyPrice: 1990,
+      name: "Zinto Premium",
+      description: "Para empresas establecidas",
+      monthlyPrice: 89,
+      yearlyPrice: 890,
       features: [
-        "Everything in Pro",
-        "White-label solution",
-        "Custom development",
-        "Dedicated account manager",
-        "Advanced security",
-        "SLA guarantee",
-        "Custom training"
+        "6 usuarios incluidos",
+        "2 números de WhatsApp",
+        "Chats ilimitados",
+        "Reportes avanzados",
+        "Auditoría completa",
+        "Integración ChatGPT",
+        "SLA personalizados",
+        "Roles y permisos avanzados",
+        "API completa",
+        "Soporte telefónico"
       ],
       popular: false
     }
@@ -123,10 +131,10 @@ const Pricing = () => {
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Planes que se adaptan a tu{" "}
-            <span className="text-primary">negocio inmobiliario</span>
+            <span className="text-primary">equipo multiagente</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
-            Solo pagas por usuarios activos. Sin costos por lead ni comisiones ocultas.
+            Solo pagas por usuarios activos. Sin costos por mensaje ni comisiones ocultas. Puedes crecer tu cuenta añadiendo usuarios y números de WhatsApp cuando lo necesites.
           </p>
           
           {/* Billing Toggle */}
@@ -215,6 +223,66 @@ const Pricing = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Extras Section */}
+      <section className="py-16 px-4 bg-muted/10">
+        <div className="container max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Extras (para cualquier plan)
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Escala tu operación según tus necesidades
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Users className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Usuario adicional</h3>
+                <div className="text-4xl font-bold text-primary mb-4">
+                  12€<span className="text-lg text-muted-foreground">/mes</span>
+                </div>
+                <p className="text-muted-foreground mb-6">
+                  Añade más miembros a tu equipo cuando sea necesario. Sin límites en el crecimiento.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-6">
+                  <MessageSquare className="h-8 w-8 text-secondary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Conexión adicional de WhatsApp</h3>
+                <div className="text-4xl font-bold text-secondary mb-4">
+                  15€<span className="text-lg text-muted-foreground">/mes</span>
+                </div>
+                <p className="text-muted-foreground mb-6">
+                  Conecta números adicionales de WhatsApp para gestionar múltiples líneas de negocio.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Card className="border-0 shadow-lg bg-gradient-to-r from-primary/5 to-secondary/5">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
+                <p className="text-lg text-muted-foreground mb-6">
+                  ¿Necesitas más de 10 usuarios o funciones específicas? Contáctanos para un plan a medida con precios especiales.
+                </p>
+                <Button size="lg" variant="outline" className="hover:bg-primary/5">
+                  Contactar ventas
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

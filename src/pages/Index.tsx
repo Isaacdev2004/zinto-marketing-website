@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Users, BarChart3, Shield, Zap, Play, CheckCircle } from "lucide-react";
+import { ArrowRight, Users, BarChart3, Shield, Zap, Play, CheckCircle, MessageSquare, Tag, Send, Bot, Clock, UserCheck, FileText, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import zintoLogo from "@/assets/zinto-logo.png";
 import dashboardMockup from "@/assets/dashboard-mockup.jpg";
@@ -30,52 +30,56 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 px-4">
-        <div className="container max-w-7xl mx-auto">
+      <section className="py-16 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
+        <div className="container max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
             <div className="space-y-8">
               {/* Badge */}
-              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 px-3 py-1">
-                Real Estate Partners • API Oficial
+              <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 px-3 py-1 animate-pulse">
+                WhatsApp Multiagente • Gestión Profesional
               </Badge>
               
               {/* Headline */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                🚀 Plataforma de{" "}
-                <span className="text-primary">centralización</span>{" "}
-                de CRM inmobiliario ⚡
+                <span className="text-primary">Controla tu negocio</span> y tu equipo desde un solo WhatsApp
               </h1>
               
               {/* Subtitle */}
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Automatiza seguimientos, asigna leads y gestiona miles de propiedades desde 1 solo lugar con tu equipo de agentes.
+                Zinto es la plataforma multiagente que ayuda a empresas de cualquier industria —peluquerías, clínicas, inmobiliarias, restaurantes, e-commerce y más— a centralizar conversaciones, organizar equipos y atender clientes de forma más humana.
+              </p>
+              
+              {/* Extra text */}
+              <p className="text-base text-muted-foreground max-w-2xl">
+                Automatiza respuestas frecuentes, asigna conversaciones y gestiona miles de mensajes desde un solo lugar con tu equipo multiagente.
               </p>
               
               {/* Feature Badges */}
               <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 bg-muted/50 rounded-full px-4 py-2">
-                  <Users className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium">Multi-agente real</span>
+                <div className="flex items-center gap-2 bg-green-500/10 rounded-full px-4 py-2 border border-green-500/20">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium">Multiagente real</span>
                 </div>
-                <div className="flex items-center gap-2 bg-muted/50 rounded-full px-4 py-2">
-                  <Zap className="h-4 w-4 text-secondary" />
-                  <span className="text-sm font-medium">Setup 30s</span>
+                <div className="flex items-center gap-2 bg-blue-500/10 rounded-full px-4 py-2 border border-blue-500/20">
+                  <Zap className="h-4 w-4 text-blue-500" />
+                  <span className="text-sm font-medium">Configuración QR en 30 segundos</span>
                 </div>
-                <div className="flex items-center gap-2 bg-muted/50 rounded-full px-4 py-2">
-                  <CheckCircle className="h-4 w-4 text-accent" />
-                  <span className="text-sm font-medium">$0 por lead</span>
+                <div className="flex items-center gap-2 bg-purple-500/10 rounded-full px-4 py-2 border border-purple-500/20">
+                  <CheckCircle className="h-4 w-4 text-purple-500" />
+                  <span className="text-sm font-medium">0 € por mensaje</span>
                 </div>
               </div>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="btn-gradient text-lg px-8 py-6">
-                  Probar gratis 14 días
+                <Button size="lg" className="btn-gradient text-lg px-8 py-6 transform hover:scale-105 transition-all duration-200">
+                  Probar gratis 7 días
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:bg-primary/5 transform hover:scale-105 transition-all duration-200">
                   <Play className="mr-2 h-5 w-5" />
-                  Ver demo en vivo
+                  Solicitar demo
                 </Button>
               </div>
               
@@ -140,52 +144,132 @@ const Index = () => {
         <div className="container max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Tu equipo y tus leads,{" "}
-              <span className="text-primary">finalmente conectados</span>
+              Funciones principales{" "}
+              <span className="text-primary">para tu equipo multiagente</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              ¿Muchos canales y poco control? Centraliza tus conversaciones inmobiliarias y permite que tus agentes trabajen en simultáneo, con flujos claros, asignaciones automáticas y con total visibilidad.
+              Todo lo que necesitas para gestionar WhatsApp de forma profesional. Centraliza conversaciones, automatiza respuestas y coordina tu equipo desde una sola plataforma.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center space-y-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 hover:from-primary/10 hover:to-primary/15 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                <Users className="h-8 w-8 text-primary" />
+                <MessageSquare className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">Multi-agente real con roles y permisos</h3>
+              <h3 className="text-xl font-semibold">Bandeja unificada</h3>
               <p className="text-muted-foreground">
-                Asigna leads automáticamente. Define roles de supervisor, agente y administrador con permisos granulares.
+                Todas las conversaciones en un solo lugar. Gestiona múltiples números de WhatsApp desde una interfaz centralizada.
               </p>
             </div>
 
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-secondary/5 to-secondary/10 hover:from-secondary/10 hover:to-secondary/15 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
-                <Zap className="h-8 w-8 text-secondary" />
+                <Users className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold">Setup rápido, sin API obligatoria</h3>
+              <h3 className="text-xl font-semibold">Multiagente real</h3>
               <p className="text-muted-foreground">
-                Conecta tu CRM existente en minutos. No necesitas desarrolladores para empezar.
+                Varios usuarios gestionando un mismo número a la vez. Trabajo colaborativo en tiempo real.
               </p>
             </div>
 
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-accent/5 to-accent/10 hover:from-accent/10 hover:to-accent/15 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
-                <BarChart3 className="h-8 w-8 text-accent" />
+                <UserCheck className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold">Integraciones con CRM y webhooks</h3>
+              <h3 className="text-xl font-semibold">Asignación automática</h3>
               <p className="text-muted-foreground">
-                Sincroniza automáticamente con Google Sheets, Airtable, Salesforce y sistemas personalizados vía webhooks.
+                Distribuye chats según reglas y disponibilidad. Optimiza la carga de trabajo de tu equipo.
               </p>
             </div>
 
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
-                <Shield className="h-8 w-8 text-primary" />
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-purple-500/5 to-purple-500/10 hover:from-purple-500/10 hover:to-purple-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto">
+                <Tag className="h-8 w-8 text-purple-500" />
               </div>
-              <h3 className="text-xl font-semibold">Analytics avanzados opcionales</h3>
+              <h3 className="text-xl font-semibold">Etiquetas y categorías</h3>
               <p className="text-muted-foreground">
-                Escala con reportes avanzados cuando necesites más insights o funciones profesionales.
+                Organiza y filtra conversaciones por estado o tipo. Mantén todo perfectamente clasificado.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-green-500/5 to-green-500/10 hover:from-green-500/10 hover:to-green-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto">
+                <FileText className="h-8 w-8 text-green-500" />
+              </div>
+              <h3 className="text-xl font-semibold">Catálogo de productos</h3>
+              <p className="text-muted-foreground">
+                Muestra tu oferta directamente desde WhatsApp. Facilita las ventas con catálogos integrados.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-blue-500/5 to-blue-500/10 hover:from-blue-500/10 hover:to-blue-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mx-auto">
+                <Send className="h-8 w-8 text-blue-500" />
+              </div>
+              <h3 className="text-xl font-semibold">Campañas masivas</h3>
+              <p className="text-muted-foreground">
+                Mensajes segmentados a clientes. Llega a tu audiencia de forma personalizada y efectiva.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-orange-500/5 to-orange-500/10 hover:from-orange-500/10 hover:to-orange-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center mx-auto">
+                <Zap className="h-8 w-8 text-orange-500" />
+              </div>
+              <h3 className="text-xl font-semibold">Plantillas rápidas</h3>
+              <p className="text-muted-foreground">
+                Respuestas predefinidas para ahorrar tiempo. Mantén la consistencia en tu comunicación.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-pink-500/5 to-pink-500/10 hover:from-pink-500/10 hover:to-pink-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-pink-500/10 flex items-center justify-center mx-auto">
+                <Bot className="h-8 w-8 text-pink-500" />
+              </div>
+              <h3 className="text-xl font-semibold">Integración con ChatGPT</h3>
+              <p className="text-muted-foreground">
+                Respuestas inteligentes y multiidioma. IA que comprende y responde como tu equipo.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-indigo-500/5 to-indigo-500/10 hover:from-indigo-500/10 hover:to-indigo-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 flex items-center justify-center mx-auto">
+                <BarChart3 className="h-8 w-8 text-indigo-500" />
+              </div>
+              <h3 className="text-xl font-semibold">Métricas en tiempo real</h3>
+              <p className="text-muted-foreground">
+                Panel con KPIs del equipo. Monitorea rendimiento y optimiza resultados al instante.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-teal-500/5 to-teal-500/10 hover:from-teal-500/10 hover:to-teal-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-teal-500/10 flex items-center justify-center mx-auto">
+                <Clock className="h-8 w-8 text-teal-500" />
+              </div>
+              <h3 className="text-xl font-semibold">SLA e informes</h3>
+              <p className="text-muted-foreground">
+                Controla tiempos de respuesta. Mantén estándares de calidad y genera reportes detallados.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-red-500/5 to-red-500/10 hover:from-red-500/10 hover:to-red-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-red-500/10 flex items-center justify-center mx-auto">
+                <Shield className="h-8 w-8 text-red-500" />
+              </div>
+              <h3 className="text-xl font-semibold">Permisos y roles</h3>
+              <p className="text-muted-foreground">
+                Define qué puede hacer cada usuario. Control granular de accesos y funcionalidades.
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 p-6 rounded-2xl bg-gradient-to-br from-yellow-500/5 to-yellow-500/10 hover:from-yellow-500/10 hover:to-yellow-500/15 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-yellow-500/10 flex items-center justify-center mx-auto">
+                <MessageCircle className="h-8 w-8 text-yellow-500" />
+              </div>
+              <h3 className="text-xl font-semibold">Chat interno</h3>
+              <p className="text-muted-foreground">
+                Comunicación entre miembros del equipo sin salir de Zinto. Coordinación perfecta en tiempo real.
               </p>
             </div>
           </div>
