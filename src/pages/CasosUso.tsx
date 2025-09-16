@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Building, ShoppingCart, Heart, GraduationCap, MapPin, Calendar, Users, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import zintoLogo from "@/assets/zinto-logo.png";
+import zintoSymbol from "@/assets/zinto-symbol.png";
 
 const CasosUso = () => {
   const useCases = [
@@ -60,11 +60,10 @@ const CasosUso = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b bg-gradient-to-r from-slate-50 to-gray-100 dark:from-slate-900 dark:to-gray-900">
         <div className="container flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={zintoLogo} alt="Zinto" className="h-8 w-auto" />
-            <span className="text-xl font-bold">Zinto</span>
+          <Link to="/" className="flex items-center">
+            <img src={zintoSymbol} alt="Zinto" className="h-10 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
@@ -204,9 +203,8 @@ const CasosUso = () => {
         <div className="container max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <img src={zintoLogo} alt="Zinto" className="h-6 w-auto" />
-                <span className="font-bold">Zinto</span>
+              <div className="flex items-center mb-4">
+                <img src={zintoSymbol} alt="Zinto" className="h-8 w-auto" />
               </div>
               <p className="text-sm text-muted-foreground">
                 Empowering real estate professionals to grow together.

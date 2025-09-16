@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { AuthForm } from "@/components/auth/AuthForm";
-import zintoLogo from "@/assets/zinto-logo.png";
+import zintoSymbol from "@/assets/zinto-symbol.png";
 
 const Login = () => {
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
@@ -27,10 +27,10 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 to-purple-50">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b bg-gradient-to-r from-slate-50 to-gray-100 dark:from-slate-900 dark:to-gray-900">
         <div className="container flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src={zintoLogo} alt="Zinto" className="h-8 w-auto" />
+          <Link to="/" className="flex items-center">
+            <img src={zintoSymbol} alt="Zinto" className="h-10 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
@@ -63,7 +63,7 @@ const Login = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <img src={zintoLogo} alt="Zinto" className="h-8 w-auto mb-4 brightness-0 invert" />
+              <img src={zintoSymbol} alt="Zinto" className="h-10 w-auto mb-4" />
               <p className="text-gray-400">
                 Plataforma multiagente para gestionar WhatsApp de forma profesional
               </p>
