@@ -30,7 +30,7 @@ const Login = () => {
       <header className="sticky top-0 z-50 w-full border-b bg-gradient-to-r from-slate-50 to-gray-100 dark:from-slate-900 dark:to-gray-900">
         <div className="container flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src={zintoSymbol} alt="Zinto" className="h-10 w-auto" />
+            <img src={zintoSymbol} alt="Zinto" className="h-12 md:h-14 w-auto drop-shadow" />
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
@@ -63,7 +63,7 @@ const Login = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <img src={zintoSymbol} alt="Zinto" className="h-10 w-auto mb-4" />
+              <img src={zintoSymbol} alt="Zinto" className="h-12 md:h-14 w-auto mb-4 drop-shadow" />
               <p className="text-gray-400">
                 Plataforma multiagente para gestionar WhatsApp de forma profesional
               </p>
