@@ -16,10 +16,17 @@ const Pricing = () => {
   const handleCheckout = async (planName: string) => {
     setLoadingPlan(planName);
     
+    // Map plan names to backend expected values
+    const planMapping: { [key: string]: string } = {
+      'Zinto Básico': 'basic',
+      'Zinto Pro': 'pro',
+      'Zinto Premium': 'enterprise'
+    };
+    
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          plan: planName.toLowerCase(),
+          plan: planMapping[planName] || planName.toLowerCase(),
           billing: isYearly ? 'yearly' : 'monthly'
         }
       });
@@ -278,9 +285,11 @@ const Pricing = () => {
                 <p className="text-lg text-muted-foreground mb-6">
                   ¿Necesitas más de 10 usuarios o funciones específicas? Contáctanos para un plan a medida con precios especiales.
                 </p>
-                <Button size="lg" variant="outline" className="hover:bg-primary/5">
-                  Contactar ventas
-                </Button>
+                <Link to="/contact">
+                  <Button size="lg" variant="outline" className="hover:bg-primary/5">
+                    Contactar ventas
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
