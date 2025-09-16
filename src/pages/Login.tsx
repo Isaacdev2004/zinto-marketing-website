@@ -28,9 +28,16 @@ const Login = () => {
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
+            <Link to="/casos-uso" className="text-sm font-medium hover:text-primary transition-colors">Casos de Uso</Link>
+            <Link to="/integraciones" className="text-sm font-medium hover:text-primary transition-colors">Integraciones</Link>
             <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Precios</Link>
             <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contacto</Link>
             <Link to="/login" className="text-sm font-medium text-primary">Iniciar sesión</Link>
+            <Link to="/pricing">
+              <Button size="sm" className="btn-gradient ml-4">
+                Prueba Gratis
+              </Button>
+            </Link>
           </nav>
         </div>
       </header>
