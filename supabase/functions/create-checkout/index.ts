@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -27,7 +28,22 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Create a Supabase client
+  const supabaseClient = createClient(
+    Deno.env.get("SUPABASE_URL") ?? "",
+    Deno.env.get("SUPABASE_ANON_KEY") ?? ""
+  );
+
   try {
+    const authHeader = req.headers.get("Authorization");
+    let user = null;
+    
+    if (authHeader) {
+      const token = authHeader.replace("Bearer ", "");
+      const { data } = await supabaseClient.auth.getUser(token);
+      user = data.user;
+    }
+
     const { plan, billing } = await req.json();
     
     if (!plan || !billing) {
@@ -44,7 +60,16 @@ serve(async (req) => {
       apiVersion: "2025-08-27.basil" 
     });
 
-    const session = await stripe.checkout.sessions.create({
+    // Check if user exists as Stripe customer
+    let customerId;
+    if (user?.email) {
+      const customers = await stripe.customers.list({ email: user.email, limit: 1 });
+      if (customers.data.length > 0) {
+        customerId = customers.data[0].id;
+      }
+    }
+
+    const sessionConfig: any = {
       line_items: [
         {
           price: priceId,
@@ -56,7 +81,16 @@ serve(async (req) => {
       cancel_url: `${req.headers.get("origin")}/pricing?canceled=true`,
       allow_promotion_codes: true,
       billing_address_collection: "required",
-    });
+    };
+
+    // Add customer info if available
+    if (customerId) {
+      sessionConfig.customer = customerId;
+    } else if (user?.email) {
+      sessionConfig.customer_email = user.email;
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionConfig);
 
     return new Response(
       JSON.stringify({ url: session.url, sessionId: session.id }), 

@@ -1,52 +1,64 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Check, ArrowRight, Users, MessageSquare } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Check, Star, ArrowRight, Users, MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
+import { SubscriptionStatus } from "@/components/subscription/SubscriptionStatus";
 import zintoLogo from "@/assets/zinto-logo.png";
 
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
-  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<string | null>(null);
   const { toast } = useToast();
+  const { user, session } = useAuth();
 
   const handleCheckout = async (planName: string) => {
-    setLoadingPlan(planName);
-    
-    // Map plan names to backend expected values
-    const planMapping: { [key: string]: string } = {
-      'Zinto Básico': 'basic',
-      'Zinto Pro': 'pro',
-      'Zinto Premium': 'enterprise'
-    };
+    setIsLoading(planName);
     
     try {
+      // Map display names to internal plan names
+      const planMap: { [key: string]: string } = {
+        "Zinto Básico": "basic",
+        "Zinto Pro": "pro", 
+        "Zinto Premium": "enterprise"
+      };
+
+      const billingCycle = isYearly ? "yearly" : "monthly";
+      const planKey = planMap[planName];
+
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          plan: planMapping[planName] || planName.toLowerCase(),
-          billing: isYearly ? 'yearly' : 'monthly'
-        }
+          plan: planKey,
+          billing: billingCycle,
+        },
+        headers: session?.access_token ? {
+          Authorization: `Bearer ${session.access_token}`,
+        } : {},
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Checkout error:', error);
+        throw error;
+      }
 
       if (data?.url) {
         window.open(data.url, '_blank');
       } else {
         throw new Error('No checkout URL received');
       }
-    } catch (error) {
-      console.error('Checkout error:', error);
+    } catch (error: any) {
+      console.error('Failed to start checkout:', error);
       toast({
-        title: "Checkout Error",
-        description: "Failed to start checkout process. Please try again.",
+        title: "Error",
+        description: error.message || "Failed to start checkout process. Please try again.",
         variant: "destructive",
       });
     } finally {
-      setLoadingPlan(null);
+      setIsLoading(null);
     }
   };
 
@@ -129,6 +141,13 @@ const Pricing = () => {
           </nav>
         </div>
       </header>
+
+      {/* Subscription Status for logged in users */}
+      {user && (
+        <div className="container mx-auto px-4 py-8">
+          <SubscriptionStatus />
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="hero-gradient py-20 px-4">
@@ -223,9 +242,9 @@ const Pricing = () => {
                     variant={plan.popular ? "default" : "outline"}
                     size="lg"
                     onClick={() => handleCheckout(plan.name)}
-                    disabled={loadingPlan === plan.name}
+                    disabled={isLoading === plan.name}
                   >
-                    {loadingPlan === plan.name ? 'Loading...' : 'Get Started'} <ArrowRight className="ml-2 h-4 w-4" />
+                    {isLoading === plan.name ? 'Loading...' : 'Get Started'} <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
               </Card>
