@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, MessageSquare, MessageCircle, Clock, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import zintoLogo from "@/assets/zinto-logo.png";
+import zintoLogo from "@/assets/new-logo.jpeg";
 
 const Contact = () => {
   return (
@@ -61,11 +61,11 @@ const Contact = () => {
             </Button>
             
             <Button variant="outline" size="lg" className="p-6 h-auto justify-start" asChild>
-              <a href="https://wa.me/1234567890" className="flex items-center gap-4">
+              <a href="https://wa.me/34644320243" className="flex items-center gap-4">
                 <MessageCircle className="h-6 w-6 text-accent" />
                 <div className="text-left">
                   <div className="font-semibold">WhatsApp</div>
-                  <div className="text-sm text-muted-foreground">Respuesta inmediata</div>
+                  <div className="text-sm text-muted-foreground">+34 644 32 02 43</div>
                 </div>
               </a>
             </Button>
@@ -189,8 +189,8 @@ const Contact = () => {
                         <p className="text-muted-foreground text-sm mb-3">
                           Chat directo con nuestro equipo de soporte
                         </p>
-                        <a href="https://wa.me/1234567890" className="text-primary hover:underline font-medium">
-                          +34 XXX XXX XXX
+                        <a href="https://wa.me/34644320243" className="text-primary hover:underline font-medium">
+                          +34 644 32 02 43
                         </a>
                         <div className="flex items-center gap-2 mt-2 text-xs text-muted-foreground">
                           <Clock className="h-3 w-3" />
@@ -300,7 +300,7 @@ const Contact = () => {
                 <a href="mailto:hola@zinto.app">Escribir a hola@zinto.app</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="https://wa.me/1234567890">WhatsApp: +34 XXX XXX XXX</a>
+                <a href="https://wa.me/34644320243">WhatsApp: +34 644 32 02 43</a>
               </Button>
             </div>
           </div>

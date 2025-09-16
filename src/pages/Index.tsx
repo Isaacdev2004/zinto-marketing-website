@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Users, BarChart3, Shield, Zap, Play, CheckCircle, MessageSquare, Tag, Send, Bot, Clock, UserCheck, FileText, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import zintoLogo from "@/assets/zinto-logo.png";
+import zintoLogo from "@/assets/new-logo.jpeg";
 import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 
 const Index = () => {
@@ -17,13 +17,13 @@ const Index = () => {
             <span className="text-xl font-bold">Zinto</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/casos-uso" className="text-sm font-medium hover:text-primary transition-colors">Casos de Uso</Link>
-            <Link to="/integraciones" className="text-sm font-medium hover:text-primary transition-colors">Integraciones</Link>  
-            <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Precios</Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contacto</Link>
-            <Link to="/login" className="text-sm font-medium hover:text-primary transition-colors">Iniciar sesión</Link>
+            <Link to="/casos-uso" className="text-sm font-medium hover:text-primary transition-colors">Use Cases</Link>
+            <Link to="/integraciones" className="text-sm font-medium hover:text-primary transition-colors">Integrations</Link>  
+            <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Pricing</Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
+            <Link to="/login" className="text-sm font-medium hover:text-primary transition-colors">Sign In</Link>
             <Button className="btn-gradient">
-              Prueba Gratis
+              Free Trial
             </Button>
           </nav>
         </div>
@@ -38,48 +38,48 @@ const Index = () => {
             <div className="space-y-8">
               {/* Badge */}
               <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 px-3 py-1 animate-pulse">
-                WhatsApp Multiagente • Gestión Profesional
+                WhatsApp Multi-Agent • Real Estate CRM
               </Badge>
               
               {/* Headline */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-primary">Controla tu negocio</span> y tu equipo desde un solo WhatsApp
+                <span className="text-primary">Control your real estate business</span> and team from a single WhatsApp
               </h1>
               
               {/* Subtitle */}
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Zinto es la plataforma multiagente que ayuda a empresas de cualquier industria —peluquerías, clínicas, inmobiliarias, restaurantes, e-commerce y más— a centralizar conversaciones, organizar equipos y atender clientes de forma más humana.
+                Zinto is the multi-agent platform that helps real estate professionals centralize conversations, organize teams, and serve clients more effectively.
               </p>
               
               {/* Extra text */}
               <p className="text-base text-muted-foreground max-w-2xl">
-                Automatiza respuestas frecuentes, asigna conversaciones y gestiona miles de mensajes desde un solo lugar con tu equipo multiagente.
+                Automate frequent responses, assign conversations, and manage thousands of messages from one place with your multi-agent team.
               </p>
               
               {/* Feature Badges */}
               <div className="flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 bg-green-500/10 rounded-full px-4 py-2 border border-green-500/20">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium">Multiagente real</span>
+                  <span className="text-sm font-medium">Real multi-agent</span>
                 </div>
                 <div className="flex items-center gap-2 bg-blue-500/10 rounded-full px-4 py-2 border border-blue-500/20">
                   <Zap className="h-4 w-4 text-blue-500" />
-                  <span className="text-sm font-medium">Configuración QR en 30 segundos</span>
+                  <span className="text-sm font-medium">QR setup in 30 seconds</span>
                 </div>
                 <div className="flex items-center gap-2 bg-purple-500/10 rounded-full px-4 py-2 border border-purple-500/20">
                   <CheckCircle className="h-4 w-4 text-purple-500" />
-                  <span className="text-sm font-medium">0 € por mensaje</span>
+                  <span className="text-sm font-medium">€0 per message</span>
                 </div>
               </div>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="btn-gradient text-lg px-8 py-6 transform hover:scale-105 transition-all duration-200">
-                  Probar gratis 7 días
+                  Start 7-day free trial
                 </Button>
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:bg-primary/5 transform hover:scale-105 transition-all duration-200">
                   <Play className="mr-2 h-5 w-5" />
-                  Solicitar demo
+                  Request demo
                 </Button>
               </div>
               
@@ -87,15 +87,15 @@ const Index = () => {
               <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-accent" />
-                  <span>Sin tarjeta de crédito</span>
+                  <span>No credit card required</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-accent" />
-                  <span>Cancela cuando quieras</span>
+                  <span>Cancel anytime</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-accent" />
-                  <span>Soporte en español</span>
+                  <span>Support in English & Spanish</span>
                 </div>
               </div>
             </div>
@@ -118,19 +118,19 @@ const Index = () => {
                 {/* Dashboard Image */}
                 <img 
                   src={dashboardMockup} 
-                  alt="Dashboard de Zinto - Gestión centralizada de CRM inmobiliario" 
+                  alt="Zinto Dashboard - Centralized real estate CRM management" 
                   className="w-full h-auto"
                 />
                 
                 {/* Floating Notifications */}
                 <div className="absolute bottom-6 left-6">
                   <div className="bg-primary text-primary-foreground rounded-lg px-3 py-2 shadow-lg text-sm font-medium">
-                    +5 nuevos leads
+                    +5 new leads
                   </div>
                 </div>
                 <div className="absolute bottom-6 right-6">
                   <div className="bg-accent text-accent-foreground rounded-lg px-3 py-2 shadow-lg text-sm font-medium">
-                    3 agentes activos
+                    3 active agents
                   </div>
                 </div>
               </div>
@@ -144,11 +144,11 @@ const Index = () => {
         <div className="container max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Funciones principales{" "}
-              <span className="text-primary">para tu equipo multiagente</span>
+              Main features{" "}
+              <span className="text-primary">for your real estate team</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Todo lo que necesitas para gestionar WhatsApp de forma profesional. Centraliza conversaciones, automatiza respuestas y coordina tu equipo desde una sola plataforma.
+              Everything you need to manage WhatsApp professionally for real estate. Centralize conversations, automate responses, and coordinate your team from one platform.
             </p>
           </div>
           
@@ -157,9 +157,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
                 <MessageSquare className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">Bandeja unificada</h3>
+              <h3 className="text-xl font-semibold">Unified inbox</h3>
               <p className="text-muted-foreground">
-                Todas las conversaciones en un solo lugar. Gestiona múltiples números de WhatsApp desde una interfaz centralizada.
+                All conversations in one place. Manage multiple WhatsApp numbers from a centralized interface.
               </p>
             </div>
 
@@ -167,9 +167,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto">
                 <Users className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold">Multiagente real</h3>
+              <h3 className="text-xl font-semibold">Real multi-agent</h3>
               <p className="text-muted-foreground">
-                Varios usuarios gestionando un mismo número a la vez. Trabajo colaborativo en tiempo real.
+                Multiple users managing the same number simultaneously. Real-time collaborative work.
               </p>
             </div>
 
@@ -177,9 +177,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto">
                 <UserCheck className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold">Asignación automática</h3>
+              <h3 className="text-xl font-semibold">Automatic assignment</h3>
               <p className="text-muted-foreground">
-                Distribuye chats según reglas y disponibilidad. Optimiza la carga de trabajo de tu equipo.
+                Distribute chats based on rules and availability. Optimize your team's workload.
               </p>
             </div>
 
@@ -187,9 +187,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto">
                 <Tag className="h-8 w-8 text-purple-500" />
               </div>
-              <h3 className="text-xl font-semibold">Etiquetas y categorías</h3>
+              <h3 className="text-xl font-semibold">Tags and categories</h3>
               <p className="text-muted-foreground">
-                Organiza y filtra conversaciones por estado o tipo. Mantén todo perfectamente clasificado.
+                Organize and filter conversations by status or type. Keep everything perfectly classified.
               </p>
             </div>
 
@@ -197,9 +197,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto">
                 <FileText className="h-8 w-8 text-green-500" />
               </div>
-              <h3 className="text-xl font-semibold">Catálogo de productos</h3>
+              <h3 className="text-xl font-semibold">Property catalog</h3>
               <p className="text-muted-foreground">
-                Muestra tu oferta directamente desde WhatsApp. Facilita las ventas con catálogos integrados.
+                Showcase your listings directly from WhatsApp. Facilitate sales with integrated catalogs.
               </p>
             </div>
 
@@ -207,9 +207,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mx-auto">
                 <Send className="h-8 w-8 text-blue-500" />
               </div>
-              <h3 className="text-xl font-semibold">Campañas masivas</h3>
+              <h3 className="text-xl font-semibold">Mass campaigns</h3>
               <p className="text-muted-foreground">
-                Mensajes segmentados a clientes. Llega a tu audiencia de forma personalizada y efectiva.
+                Targeted messages to clients. Reach your audience in a personalized and effective way.
               </p>
             </div>
 
@@ -217,9 +217,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center mx-auto">
                 <Zap className="h-8 w-8 text-orange-500" />
               </div>
-              <h3 className="text-xl font-semibold">Plantillas rápidas</h3>
+              <h3 className="text-xl font-semibold">Quick templates</h3>
               <p className="text-muted-foreground">
-                Respuestas predefinidas para ahorrar tiempo. Mantén la consistencia en tu comunicación.
+                Predefined responses to save time. Maintain consistency in your communication.
               </p>
             </div>
 
@@ -227,9 +227,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-pink-500/10 flex items-center justify-center mx-auto">
                 <Bot className="h-8 w-8 text-pink-500" />
               </div>
-              <h3 className="text-xl font-semibold">Integración con ChatGPT</h3>
+              <h3 className="text-xl font-semibold">ChatGPT integration</h3>
               <p className="text-muted-foreground">
-                Respuestas inteligentes y multiidioma. IA que comprende y responde como tu equipo.
+                Smart multilingual responses. AI that understands and responds like your team.
               </p>
             </div>
 
@@ -237,9 +237,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 flex items-center justify-center mx-auto">
                 <BarChart3 className="h-8 w-8 text-indigo-500" />
               </div>
-              <h3 className="text-xl font-semibold">Métricas en tiempo real</h3>
+              <h3 className="text-xl font-semibold">Real-time metrics</h3>
               <p className="text-muted-foreground">
-                Panel con KPIs del equipo. Monitorea rendimiento y optimiza resultados al instante.
+                Team KPI dashboard. Monitor performance and optimize results instantly.
               </p>
             </div>
 
@@ -247,9 +247,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-teal-500/10 flex items-center justify-center mx-auto">
                 <Clock className="h-8 w-8 text-teal-500" />
               </div>
-              <h3 className="text-xl font-semibold">SLA e informes</h3>
+              <h3 className="text-xl font-semibold">SLA and reports</h3>
               <p className="text-muted-foreground">
-                Controla tiempos de respuesta. Mantén estándares de calidad y genera reportes detallados.
+                Control response times. Maintain quality standards and generate detailed reports.
               </p>
             </div>
 
@@ -257,9 +257,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-red-500/10 flex items-center justify-center mx-auto">
                 <Shield className="h-8 w-8 text-red-500" />
               </div>
-              <h3 className="text-xl font-semibold">Permisos y roles</h3>
+              <h3 className="text-xl font-semibold">Permissions and roles</h3>
               <p className="text-muted-foreground">
-                Define qué puede hacer cada usuario. Control granular de accesos y funcionalidades.
+                Define what each user can do. Granular control of access and functionalities.
               </p>
             </div>
 
@@ -267,9 +267,9 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-yellow-500/10 flex items-center justify-center mx-auto">
                 <MessageCircle className="h-8 w-8 text-yellow-500" />
               </div>
-              <h3 className="text-xl font-semibold">Chat interno</h3>
+              <h3 className="text-xl font-semibold">Internal chat</h3>
               <p className="text-muted-foreground">
-                Comunicación entre miembros del equipo sin salir de Zinto. Coordinación perfecta en tiempo real.
+                Communication between team members without leaving Zinto. Perfect real-time coordination.
               </p>
             </div>
           </div>
@@ -281,14 +281,14 @@ const Index = () => {
         <div className="container max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 px-3 py-1 mb-6">
-              Cómo funciona
+              How it works
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              De 0 a operativo en{" "}
-              <span className="text-primary">menos de 5 minutos</span>
+              From 0 to operational in{" "}
+              <span className="text-primary">less than 5 minutes</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Sin instalaciones complejas, sin desarrolladores. Solo conecta, invita y empieza.
+              No complex installations, no developers needed. Just connect, invite, and start.
             </p>
           </div>
           
@@ -297,9 +297,9 @@ const Index = () => {
               <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto border-4 border-primary/20">
                 <span className="text-3xl font-bold text-primary">1</span>
               </div>
-              <h3 className="text-2xl font-semibold">Conecta tu CRM</h3>
+              <h3 className="text-2xl font-semibold">Connect your CRM</h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Integra tu CRM existente o importa tus leads. Conexión instantánea sin configuración técnica compleja.
+                Integrate your existing CRM or import your leads. Instant connection without complex technical setup.
               </p>
             </div>
             
@@ -307,9 +307,9 @@ const Index = () => {
               <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center mx-auto border-4 border-secondary/20">
                 <span className="text-3xl font-bold text-secondary">2</span>
               </div>
-              <h3 className="text-2xl font-semibold">Crea equipos y usuarios</h3>
+              <h3 className="text-2xl font-semibold">Create teams and users</h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Invita a tu equipo, define roles y permisos. Configura reglas de asignación automática y horarios de atención.
+                Invite your team, define roles and permissions. Set up automatic assignment rules and office hours.
               </p>
             </div>
             
@@ -317,9 +317,9 @@ const Index = () => {
               <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto border-4 border-accent/20">
                 <span className="text-3xl font-bold text-accent">3</span>
               </div>
-              <h3 className="text-2xl font-semibold">Gestiona en simultáneo</h3>
+              <h3 className="text-2xl font-semibold">Manage simultaneously</h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Tu equipo gestiona todos los leads desde una bandeja unificada. Métricas y reportes en tiempo real.
+                Your team manages all leads from a unified inbox. Real-time metrics and reports.
               </p>
             </div>
           </div>
@@ -359,6 +359,130 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-20 px-4">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Simple pricing{" "}
+              <span className="text-primary">for every team</span>
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Choose the plan that fits your real estate business. Start free and scale as you grow.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Basic Plan */}
+            <Card className="relative border-2">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-bold mb-2">Zinto Basic</h3>
+                <div className="text-4xl font-bold text-primary mb-4">€28<span className="text-lg text-muted-foreground">/month</span></div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>3 users included</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>1 WhatsApp number (QR)</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Unlimited chats</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Email support</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Basic integrations</span>
+                  </li>
+                </ul>
+                <Button className="w-full" variant="outline">Start free trial</Button>
+              </CardContent>
+            </Card>
+
+            {/* Pro Plan */}
+            <Card className="relative border-2 border-primary shadow-2xl scale-105">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <Badge className="bg-primary text-primary-foreground px-4 py-1">Most Popular</Badge>
+              </div>
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-bold mb-2">Zinto Pro</h3>
+                <div className="text-4xl font-bold text-primary mb-4">€49<span className="text-lg text-muted-foreground">/month</span></div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>4 users included</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>1 WhatsApp number</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Unlimited chats</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Priority support</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Advanced dashboard</span>
+                  </li>
+                </ul>
+                <Button className="w-full btn-gradient">Start free trial</Button>
+              </CardContent>
+            </Card>
+
+            {/* Premium Plan */}
+            <Card className="relative border-2">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-2xl font-bold mb-2">Zinto Premium</h3>
+                <div className="text-4xl font-bold text-primary mb-4">€89<span className="text-lg text-muted-foreground">/month</span></div>
+                <ul className="space-y-3 mb-8 text-left">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>6 users included</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>2 WhatsApp numbers</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Unlimited chats</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Advanced reports</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span>Complete audit</span>
+                  </li>
+                </ul>
+                <Button className="w-full" variant="outline">Start free trial</Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-4">Add-ons (for any plan):</p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <span>Additional user: €12/month</span>
+              <span>Additional WhatsApp connection: €15/month</span>
+            </div>
+            <p className="text-muted-foreground mt-4 text-sm">
+              Scale your account by adding users and WhatsApp numbers as needed.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-20 px-4">
         <div className="container max-w-4xl mx-auto text-center">
@@ -394,21 +518,21 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            ¿Listo para hacer crecer tu{" "}
-            <span className="text-primary">negocio inmobiliario</span>?
+            Ready to grow your{" "}
+            <span className="text-primary">real estate business</span>?
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Únete a miles de profesionales inmobiliarios que confían en Zinto para gestionar sus leads y cerrar más ventas.
+            Join thousands of real estate professionals who trust Zinto to manage their leads and close more sales.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="btn-gradient text-lg px-8 py-6" asChild>
               <Link to="/pricing">
-                Empezar prueba gratuita <ArrowRight className="ml-2 h-5 w-5" />
+                Start free trial <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6">
               <Play className="mr-2 h-5 w-5" />
-              Agendar demo
+              Schedule demo
             </Button>
           </div>
           
@@ -416,15 +540,15 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-8 mt-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-accent" />
-              <span>14 días gratis</span>
+              <span>7 days free</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-accent" />
-              <span>Sin configuración técnica</span>
+              <span>No technical setup</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-accent" />
-              <span>Soporte especializado</span>
+              <span>Specialized support</span>
             </div>
           </div>
         </div>
