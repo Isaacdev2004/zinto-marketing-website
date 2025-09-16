@@ -14,7 +14,7 @@ const Success = () => {
       <header className="sticky top-0 z-50 w-full border-b bg-gradient-to-r from-slate-50 to-gray-100 dark:from-slate-900 dark:to-gray-900">
         <div className="container flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src={zintoSymbol} alt="Zinto" className="h-14 md:h-16 w-auto drop-shadow" />
+            <img src={zintoSymbol} alt="Zinto" className="h-16 md:h-20 w-auto drop-shadow" />
           </Link>
         </div>
       </header>
